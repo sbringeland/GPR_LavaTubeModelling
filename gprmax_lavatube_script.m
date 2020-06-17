@@ -77,7 +77,9 @@ for a = 1:length(rel_permittivity1)
                             for h = 1:length(centre_fq)
                                 file_name = sprintf('gprMax_modeltest_fq%i.in',centre_fq(h));
                                 fid = fopen(file_name,'w');
-                                text
+                                % The following line is SUPER long but when
+                                % I tried to break it up it wouldn't work
+                                % for some reason
                                 fprintf(fid, '#title: %s \r\n#domain: %.4f %.4f %.4f \r\n#dx_dy_dz: %.4f %.4f %.4f \r\n#time_window: %.15f \r\n#material: %.3f %.3f %.3f %.3f %s \r\n#material: %.3f %.3f %.3f %.3f %s \r\n#waveform: %s %f %f %s \r\n#rx: %.4f %.4f %.4f\r\n#rx_steps: %.4f %.4f %.4f\r\n#src_steps: %.4f %.4f %.4f\r\n#box: %.4f %.4f %.4f %.4f %.4f %.4f %s \r\n#cylinder: %.4f %.4f %.4f %.4f %.4f %.4f %.4f %s \r\n#geometry_view: %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f geometryview%s n',...
                                     title,domain(1),domain(2),domain(3),dx_dy_dz(1),dx_dy_dz(2),dx_dy_dz(3),...
                                     time_window,rel_permittivity1(a),cond1(c),rel_permeability1,mag_loss1,material1,...
